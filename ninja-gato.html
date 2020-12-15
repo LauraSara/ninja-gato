@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ninja a Gato</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+  
+  <style>
+    div{
+      display: inline-block;
+      max-width: 300px;
+      margin-left: 550px;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <img src="ninja0.png"  data-alt-src="cat0.png">
+    <img src="ninja1.png"  data-alt-src="cat1.png">
+    <img src="ninja2.png"  data-alt-src="cat2.png">
+    <img src="ninja3.png"  data-alt-src="cat3.png">
+    <img src="ninja4.png"  data-alt-src="cat4.png">
+  </div>
+
+  <script>
+    $(document).ready(function() {    
+      $('img').on('click',function() {
+        console.log('data-alt-src value is', $(this).attr('data-alt-src'));
+        // primero nos vamos a traer los valores
+        var src= $(this).attr("src");
+        var data= $(this).attr("data-alt-src");
+        // después los intercambiamos      
+        $(this).attr("data",$(this).attr("src"));
+        $(this).attr("src",$(this).attr("data-alt-src"));       
+      });
+    })
+  </script>
+</body>
+</html>
+
+
